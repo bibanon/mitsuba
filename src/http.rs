@@ -2,6 +2,7 @@ use std::path::Path;
 use std::num::NonZeroU32;
 use std::sync::{Arc, Mutex};
 use std::time::{Duration, Instant};
+use std::env::var;
 
 use reqwest::StatusCode;
 use serde::de::DeserializeOwned;
@@ -55,7 +56,8 @@ impl HttpClient {
                 None
             }
         }))
-        .build().unwrap();
+        //Set custom user-agent https://github.com/4chan/4chan-API/issues/13
+        .user_agent(std::env::var("USER_AGENT").unwrap().to_string()).build().unwrap();
 
         HttpClient {
             limiter:  Arc::new(RateLimiter::dashmap(Quota::per_minute(quota).allow_burst(burst))),

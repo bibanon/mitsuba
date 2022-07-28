@@ -5947,7 +5947,7 @@ ThreadUpdater.buildDesktopControl = function(bottom) {
     navlinks = $.cls('navLinks' + bottom)[0];
   }
   else {
-    navlinks = $.cls('navLinks')[1];
+    navlinks = $.cls('navLinks')[0];
   }
   
   if (navlinks) {
@@ -5963,7 +5963,7 @@ ThreadUpdater.initControls = function() {
   }
   // Desktop
   else {
-    this.buildDesktopControl();
+    this.buildDesktopControl(false);
     this.buildDesktopControl(true);
   }
 };

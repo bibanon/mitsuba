@@ -16,6 +16,13 @@ mod metric;
 mod archiver;
 mod web;
 
+#[cfg(all(feature = "mimalloc", not(target_env = "msvc")))]
+use mimalloc::MiMalloc;
+
+#[cfg(all(feature = "mimalloc", not(target_env = "msvc")))]
+#[global_allocator]
+static GLOBAL: MiMalloc = MiMalloc;
+
 use web::web_main;
 use archiver::{Archiver};
 use http::HttpClient;

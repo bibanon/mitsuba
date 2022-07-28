@@ -217,6 +217,18 @@ fn handle_embedded_file(path: &str) -> HttpResponse {
     }
   }
   
+
+//fn handle_embedded_file(path: &str) -> HttpResponse {
+//    match Asset::get(path) {
+//        Some(content) => {
+//        let content  = content.into_owned();
+//        HttpResponse::Ok().content_type(from_path(path).first_or_octet_stream().as_ref()).body(content)
+//        }
+//        None => HttpResponse::NotFound().body("404 Not Found"),
+//    }
+//}
 pub(crate) async fn dist(path: web::Path<String>) -> HttpResponse {
     handle_embedded_file(&path.into_inner())
 }
+
+
