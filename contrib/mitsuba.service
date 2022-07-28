@@ -1,0 +1,18 @@
+[Unit]
+Description=Mitsuba archiver
+After=postgresql.service
+Requires=postgresql.service
+
+[Service]
+ExecStart=/home/mitsuba/mitsuba
+WorkingDirectory=/home/mitsuba
+User=mitsuba
+Group=mitsuba
+
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
