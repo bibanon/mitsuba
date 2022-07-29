@@ -132,4 +132,3 @@ At the moment a full imageboard engine with posting and administration is consid
 
 ## Thanks
 Thanks reasv, for originally creating Mitsuba.
-# mitsuba
