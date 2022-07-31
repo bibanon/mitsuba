@@ -1,0 +1,24 @@
+# Git
+.git
+.gitignore
+.gitattributes
+.github
+
+# Docker
+Dockerfile
+docker-compose.yml
+example.env
+
+# Documentation
+README.md
+CHANGELOG.md
+CONTRIBUTING.md
+
+# macOS
+.DS_Store
+
+# Visual Studio Code
+.vscode
+
+# JetBrains
+.idea
