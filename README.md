@@ -13,6 +13,7 @@ Mitsuba does not support "ghost posting" as it's not an imageboard engine. This 
 | Archive | Boards | Country | Cloudflare |
 |-|-|-|-|
 | [desu.si](https://desu.si) (running by fork dev) | biz,lit,sci,g |  🇫🇮 FI  | ✅ |
+| [mitsuba.eientei.xyz](https://mitsuba.eientei.xyz) | biz,lit,sci,g | ?? | ?? |
 | [mitsuba.world](https://mitsuba.world) (running by original dev) | only /a/ fully archived | ?? | ?? |
 ## Features
 - Very quick and easy to set up
