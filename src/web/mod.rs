@@ -1,7 +1,7 @@
 #[allow(unused_imports)]
 use log::{info, warn, error, debug};
 
-use actix_web::{web, App, HttpServer, middleware::NormalizePath};
+use actix_web::{web, App, HttpServer, middleware::NormalizePath, middleware::Compress};
 use tokio::fs::create_dir_all;
 
 use crate::db::DBClient;
@@ -27,6 +27,7 @@ pub async fn web_main() -> std::io::Result<()> {
         .app_data(web::Data::new(dbc.clone()))
         .app_data(handlebars_ref.clone())
         .wrap(NormalizePath::default())
+        .wrap(Compress::default())
         .service(api::get_index)
         .service(api::get_thread)
         .service(api::get_post)
